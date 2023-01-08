@@ -1,9 +1,7 @@
 project "yaml-cpp"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++11"
-    staticruntime "on"
-
+    
     targetdir ("%{prj.location}/bin/" .. outputdir)
     objdir ("%{prj.location}/bin-int/" .. outputdir)
 
@@ -22,11 +20,6 @@ project "yaml-cpp"
     {
         "include",
         "src"
-    }
-    
-    defines  
-    {
-        "MSDFGEN_USE_CPP11"
     }
 
     filter "system:windows"
