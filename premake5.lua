@@ -22,6 +22,11 @@ project "yaml-cpp"
         "src"
     }
 
+    defines 
+    {
+        "YAML_CPP_STATIC_DEFINE"
+    }
+
     filter "system:windows"
     systemversion "latest"
 
