@@ -1,6 +1,7 @@
 project "yaml-cpp"
     kind "StaticLib"
     language "C++"
+    staticruntime "on"
     
     targetdir ("%{prj.location}/bin/" .. outputdir)
     objdir ("%{prj.location}/bin-int/" .. outputdir)
