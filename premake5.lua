@@ -2,13 +2,11 @@ project "yaml-cpp"
     kind "StaticLib"
     language "C++"
     staticruntime "off"
-    
-    architecture "x86_64"
 
     targetdir ("%{prj.location}/bin/" .. outputdir)
     objdir ("%{prj.location}/bin-int/" .. outputdir)
 
-    files 
+    files
     {
         "src/**.cpp",
         "src/**.h",
@@ -19,21 +17,25 @@ project "yaml-cpp"
         "inlcude/**.h",
     }
 
-    includedirs 
+    includedirs
     {
         "include",
         "src"
     }
 
-    defines 
+    defines
     {
         "YAML_CPP_STATIC_DEFINE"
     }
 
     filter "system:windows"
-    systemversion "latest"
+        architecture "x86_64"
+        systemversion "latest"
 
-    filter "configurations:Debug"        
+    filter "system:macosx"
+		architecture "ARM64"
+
+    filter "configurations:Debug"
         runtime "Debug"
         symbols "on"
 
